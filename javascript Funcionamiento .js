@@ -18,7 +18,7 @@ function rollDice() {
     currentPlayer = currentPlayer === 0 ? 1 : 0;
     if (currentPlayer === 0) round++;
     document.getElementById('currentPlayer').textContent = `Jugador ${currentPlayer + 1}`;
-    document.getElementById('Round').textContent = round;
+    document.getElementById('round').textContent = round;
   }
 }
 
