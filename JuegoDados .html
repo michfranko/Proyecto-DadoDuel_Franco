@@ -4,22 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duelo de Dados</title>
+    <link rel="stylesheet" href="Visuales JuegoDado .css">
 </head>
 <body>
     <h1>Duelo de Dados</h1>
+    <p> ¡Lanza los dados y suma puntos para ganar! </p>
     <div id="game">
-        <div id="player1">
+        <div id="player1" class="player">
             <h2>Jugador 1</h2>
-            <div id="dice1"></div>
+            <div class="dice" id="dice1"></div>
             <p>Puntuación: <span id="score1">0</span></p>
         </div>
-        <div id="player2">
+        <div id="player2" class="player">
             <h2>Jugador 2</h2>
-            <div id="dice2"></div>
+            <div class="dice" id="dice2"></div>
             <p>Puntuación: <span id="score2">0</span></p>
         </div>
     </div>
     <div id="controls">
+        <p> Ronda: <span id="round">1</span></p>
+        <p> Turno de: <span id="currentPlayer">Jugador 1</span>
         <button id="rollButton">Lanzar Dado</button>
         <button id="resetButton">Reiniciar</button>
     </div>
