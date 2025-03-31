@@ -2,25 +2,28 @@ let scores = [0, 0];
 let round = 1;
 let currentPlayer = 0;
 const maxRounds = 3;
+let gameActive = false;
+let playerNames = ["Jugador 1", "Jugador 2"];
 
 document.getElementById('rollButton').addEventListener('click', rollDice);
 document.getElementById('resetButton').addEventListener('click', resetGame);
 document.getElementById('startButton').addEventListener('click', startGame);
 document.addEventListener('keydown', function(event) {
-    if (event.code === 'Space') {
+    if (event.code === 'Space' && gameActive) {
         rollDice();
     }
 });
 
 function startGame() {
-    const name1 = document.getElementById('name1').value || 'Jugador 1';
-    const name2 = document.getElementById('name2').value || 'Jugador 2';
-    document.getElementById('player1').querySelector('h2').textContent = name1;
-    document.getElementById('player2').querySelector('h2').textContent = name2;
-    document.getElementById('currentPlayer').textContent = name1;
+    playerNames[0] = document.getElementById('name1').value || 'Jugador 1';
+    playerNames[1] = document.getElementById('name2').value || 'Jugador 2';
+    document.getElementById('player1').querySelector('h2').textContent = playerNames[0];
+    document.getElementById('player2').querySelector('h2').textContent = playerNames[1];
+    document.getElementById('currentPlayer').textContent = playerNames[0];
     document.getElementById('nameInputs').style.display = 'none';
     document.getElementById('game').style.display = 'flex';
     document.getElementById('controls').style.display = 'block';
+    gameActive = true;
 }
 
 function rollDice() {
@@ -37,7 +40,7 @@ function rollDice() {
         document.getElementById(`score${currentPlayer + 1}`).textContent = scores[currentPlayer];
 
         const historyItem = document.createElement('li');
-        historyItem.textContent = `Jugador ${currentPlayer + 1} lanzó un ${diceValue}`;
+        historyItem.textContent = `${playerNames[currentPlayer]} lanzó un ${diceValue}`;
         document.getElementById('historyList').appendChild(historyItem);
 
         if (round === maxRounds && currentPlayer === 1) {
@@ -45,7 +48,7 @@ function rollDice() {
         } else {
             currentPlayer = currentPlayer === 0 ? 1 : 0;
             if (currentPlayer === 0) round++;
-            document.getElementById('currentPlayer').textContent = `Jugador ${currentPlayer + 1}`;
+            document.getElementById('currentPlayer').textContent = playerNames[currentPlayer];
             document.getElementById('round').textContent = round;
         }
     }, 1000); // Duración de la animación del GIF
@@ -53,11 +56,12 @@ function rollDice() {
 
 function determineWinner() {
     document.getElementById('rollButton').disabled = true;
+    gameActive = false;
     let resultText = '';
     if (scores[0] > scores[1]) {
-        resultText = '¡Jugador 1 gana!';
+        resultText = `¡${playerNames[0]} gana!`;
     } else if (scores[0] < scores[1]) {
-        resultText = '¡Jugador 2 gana!';
+        resultText = `¡${playerNames[1]} gana!`;
     } else {
         resultText = '¡Empate!';
     }
@@ -75,11 +79,12 @@ function resetGame() {
     scores = [0, 0];
     round = 1;
     currentPlayer = 0;
+    gameActive = true;
     document.getElementById('dice1').textContent = '';
     document.getElementById('dice2').textContent = '';
     document.getElementById('score1').textContent = '0';
     document.getElementById('score2').textContent = '0';
-    document.getElementById('currentPlayer').textContent = 'Jugador 1';
+    document.getElementById('currentPlayer').textContent = playerNames[0];
     document.getElementById('round').textContent = '1';
     document.getElementById('result').textContent = '';
     document.getElementById('historyList').innerHTML = '';
