@@ -9,7 +9,12 @@
 <body>
     <h1>Duelo de Dados</h1>
     <p> ¡Lanza los dados y suma puntos para ganar! </p>
-    <div id="game">
+    <div id="nameInputs">
+        <input type="text" id="name1" placeholder="Nombre Jugador 1">
+        <input type="text" id="name2" placeholder="Nombre Jugador 2">
+        <button id="startButton">Comenzar Juego</button>
+    </div>
+    <div id="game" style="display: none;">
         <div id="player1" class="player">
             <h2>Jugador 1</h2>
             <div class="dice" id="dice1"></div>
@@ -21,13 +26,18 @@
             <p>Puntuación: <span id="score2">0</span></p>
         </div>
     </div>
-    <div id="controls">
+    <div id="controls" style="display: none;">
         <p> Ronda: <span id="round">1</span></p>
         <p> Turno de: <span id="currentPlayer">Jugador 1</span>
         <button id="rollButton">Lanzar Dado</button>
         <button id="resetButton">Reiniciar</button>
     </div>
     <div id="result"></div>
+    <div id="history">
+        <h3>Historial de Lanzamientos</h3>
+        <ul id="historyList"></ul>
+    </div>
+    <audio id="diceSound" src="audio/dice-sound.mp3"></audio>    
     <script src="javascript Funcionamiento .js"></script>
 </body>
 </html>
