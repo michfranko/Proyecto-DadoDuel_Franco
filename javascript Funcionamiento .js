@@ -4,6 +4,7 @@ let currentPlayer = 0;
 const maxRounds = 3;
 let gameActive = false;
 let playerNames = ["Jugador 1", "Jugador 2"];
+let playerColors = ["#90ee90", "#add8e6"]; // Colores por defecto
 
 document.getElementById('rollButton').addEventListener('click', rollDice);
 document.getElementById('resetButton').addEventListener('click', resetGame);
@@ -17,8 +18,13 @@ document.addEventListener('keydown', function(event) {
 function startGame() {
     playerNames[0] = document.getElementById('name1').value || 'Jugador 1';
     playerNames[1] = document.getElementById('name2').value || 'Jugador 2';
+    playerColors[0] = document.getElementById('color1').value;
+    playerColors[1] = document.getElementById('color2').value;
+
     document.getElementById('player1').querySelector('h2').textContent = playerNames[0];
     document.getElementById('player2').querySelector('h2').textContent = playerNames[1];
+    document.getElementById('player1').style.backgroundColor = playerColors[0];
+    document.getElementById('player2').style.backgroundColor = playerColors[1];
     document.getElementById('currentPlayer').textContent = playerNames[0];
     document.getElementById('nameInputs').style.display = 'none';
     document.getElementById('game').style.display = 'flex';
