@@ -10,13 +10,13 @@ body {
     margin: 20px;
 }
 
-#player {
+.player {
     border: 2px solid #000;
     padding: 10px;
     background-color: #fff;
 }
 
-#dice {
+.dice {
     width: 50px;
     height: 50px;
     margin: 10px auto;
@@ -41,4 +41,23 @@ button {
     margin-top: 20px;
     font-size: 24px;
     font-weight: bold;
+}
+
+#history {
+    margin-top: 20px;
+}
+
+#historyList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#nameInputs {
+    margin: 20px;
+}
+
+#nameInputs input {
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
 }
