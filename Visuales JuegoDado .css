@@ -65,3 +65,15 @@ button {
     margin: 5px;
     font-size: 16px;
 }
+
+#instructions {
+    margin: 20px;
+    padding: 15px;
+    border: 2px solid #000;
+    background-color: hsl(61, 80%, 86%);
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
