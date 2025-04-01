@@ -1,8 +1,11 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/013/227/537/small/background-graphics-with-light-purple-white-black-gradients-use-designs-for-web-pages-apps-mobile-text-backgrounds-screens-wallpapers-decorations-and-art-design-elements-photo.jpg');
+    background-image: url("audio/Fondo.png");
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 #game {
