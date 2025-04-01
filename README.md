@@ -20,12 +20,11 @@ Duelo de Dados es una aplicación web interactiva en la que dos jugadores lanzan
 5. Presiona "Reiniciar" para comenzar una nueva partida.
    
 ## Capturas de Pantalla
+
 1. Ingreso de Jugadores y selector de Colores de cada Jugador
-![ingreso](https://github.com/user-attachments/assets/dc36d1d6-c94b-4878-a148-84920f462255)
+![Inicio](https://github.com/user-attachments/assets/7cf4966d-5c52-4d7e-a34a-2d435e44bd74)
 2. Pagina Principal de Juego:
-   ![Main](https://github.com/user-attachments/assets/28f83ba8-7982-414e-8ede-c4d431eb14ce)
-3.Pagina Principal de Juego con Sesion finalizada:
-![Final](https://github.com/user-attachments/assets/a2d0e14b-320c-4d05-b417-5b266ee13594)
+ ![Principal](https://github.com/user-attachments/assets/4e5ccd3c-0aa2-4651-8977-f5b58b51a36d)
 
 ## Tecnologías Utilizadas
 - HTML5
